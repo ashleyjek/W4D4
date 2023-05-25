@@ -18,12 +18,13 @@ p bad_two_sum?(arr, 10) # => should be false
 
 def okay_two_sum?(arr,target)
   sorted = arr.sort
-  mid = sorted.length / 2
 
-  left = sorted.take(mid)
-  right = sorted.drop(mid)
 
-  if sorted[mid] == target
-    mid
-  
+  left = 0
+  right = arr.size
+
+  sorted.each
+
+
+
 end
