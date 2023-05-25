@@ -18,7 +18,7 @@ end
 # p first_anagram?("catt","caat")
 
 
-def second_anagram?(str1, str2) # => O(n) , #second_anagram is worst than #first_anagram
+def second_anagram?(str1, str2) # => O(n) , #first_anagram is worst than #second_anagram
   arr1 = str1.split("")
   arr2 = str2.split("")
 
