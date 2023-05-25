@@ -73,7 +73,7 @@ p largest_contiguous_subsum(list) # => 8
 # [3, -7]       # => -4
 # [-7]          # => -7
 
-def largest_contiguous_subsum_(array)
+def largest_contiguous_subsum_(array) # O(n)
   largest = 0
   max_cur_sum = 0
   
