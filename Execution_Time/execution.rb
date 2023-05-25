@@ -1,3 +1,4 @@
+require "byebug"
 #O(n^2)
 def my_min(array)
 #  n = array.length - 1
@@ -24,7 +25,7 @@ end
 list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 p my_min(list)
 
-def my_min(array)
+def my_min_(array)
   current = 0
   array.each do |ele|
     if ele < current
@@ -39,7 +40,7 @@ end
 
 list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 
-p my_min(list)
+p my_min_(list)
 
 def largest_contiguous_subsum(array) # <= O(n^2)
   subs = []
@@ -72,14 +73,18 @@ p largest_contiguous_subsum(list) # => 8
 # [3, -7]       # => -4
 # [-7]          # => -7
 
-def largest_contiguous_subsum(array)
-  largest = array.first # 5
-  sum = array.first # 5
+def largest_contiguous_subsum_(array)
+  largest = 0
+  max_cur_sum = 0
+  
 
-  (0...array.length-1).each do |idx|
-    sum = array[idx] + array[idx+1]
-    if sum > largest
-      largest = sum
+  (0..array.length-1).each do |idx|
+    max_cur_sum += array[idx]
+    if largest < max_cur_sum
+      largest = max_cur_sum
+    end
+    if max_cur_sum < 0 
+      max_cur_sum = 0
     end
   end
 
@@ -87,8 +92,8 @@ def largest_contiguous_subsum(array)
 end
 
 
-list = [5, 3, -7]
-p largest_contiguous_subsum(list) # => 8
+list = [5, 3, -10, 10, 10]
+p largest_contiguous_subsum_(list) # => 8
 
 # possible sub-sums
 # [5]           # => 5
