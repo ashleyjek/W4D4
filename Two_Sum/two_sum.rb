@@ -18,8 +18,8 @@ p bad_two_sum?(arr, 10) # => should be false
 # require "byebug"
 
 
-def okay_two_sum?(arr,target) #=> O(n)
-  sorted = arr.sort
+def okay_two_sum?(arr,target) 
+  sorted = arr.sort #=> quick sort => nlog(n)
 
   until sorted.empty?
     left = sorted.first
