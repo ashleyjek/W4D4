@@ -1,5 +1,5 @@
+#O(n^2)
 def my_min(array)
-
 #  n = array.length - 1
 
 
@@ -20,7 +20,7 @@ def my_min(array)
 
 end
 
-
+#O(n)
 list = [ 0, 3, 5, 4, -5, 10, 1, 90 ]
 p my_min(list)
 
