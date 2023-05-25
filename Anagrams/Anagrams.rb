@@ -19,3 +19,22 @@ end
 p anagram?("gizmo", "sally")    #=> false
 p anagram?("elvis", "lives")    #=> true
 
+def first_anagram?(str1,str2)
+  anagrams = []
+  (0...str1.length).each do |idx1|
+    (idx1...str1.length).each do |idx2|
+      anagrams << str1[idx1..idx2]
+    end
+  end
+
+  anagrams.each do |ana|
+    if ana == str2
+      return true
+    end
+  end
+  false
+
+end
+
+p first_anagram?("potato","cat")
+p first_anagram?("potatocatkjsbdkjsbfkjbskjssfsgkhjhgfghnjhgf","catcef")
