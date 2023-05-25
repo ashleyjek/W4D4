@@ -18,10 +18,8 @@ p bad_two_sum?(arr, 10) # => should be false
 # require "byebug"
 
 
-def okay_two_sum?(arr,target)
+def okay_two_sum?(arr,target) #=> O(n)
   sorted = arr.sort
-
-  # debugger
 
   until sorted.empty?
     left = sorted.first
@@ -41,3 +39,18 @@ end
 arr = [0, 1, 5, 7]
 
 p okay_two_sum?(arr,8)
+
+
+def two_sum?(arr, target) # O(n)
+  hash = Hash.new {|h, k| h[k] = false }
+  arr.each do |ele|
+    if hash[ele] == true
+      return true
+    else hash[target-ele] = true
+    end
+  end
+
+end
+
+arr = [0, 1, 5, 7, 10]
+p two_sum?(arr, 8)
